@@ -1,15 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace EonX\EasyActivity\Doctrine\Resolver;
+namespace EonX\EasyActivity\Common\Resolver;
 
 use EonX\EasyActivity\Common\Entity\ActivitySubjectInterface;
 use EonX\EasyActivity\Common\Enum\ActivityAction;
-use EonX\EasyActivity\Common\Resolver\ActivitySubjectDataResolverInterface;
 use EonX\EasyActivity\Common\Serializer\ActivitySubjectDataSerializerInterface;
 use EonX\EasyActivity\Common\ValueObject\ActivitySubjectData;
 
-final readonly class DoctrineActivitySubjectDataResolver implements ActivitySubjectDataResolverInterface
+final readonly class DefaultActivitySubjectDataResolver implements ActivitySubjectDataResolverInterface
 {
     public function __construct(
         private ActivitySubjectDataSerializerInterface $serializer,
