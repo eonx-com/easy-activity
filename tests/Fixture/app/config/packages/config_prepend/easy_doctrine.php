@@ -3,15 +3,14 @@ declare(strict_types=1);
 
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
-use stdClass;
+use EonX\EasyActivity\Tests\Fixture\App\Entity\Article;
+use EonX\EasyActivity\Tests\Fixture\App\Entity\Comment;
 use Symfony\Config\EasyDoctrineConfig;
 
 return static function (EasyDoctrineConfig $easyDoctrineConfig): void {
-    $easyDoctrineConfig->easyErrorHandler()
-        ->enabled(false);
-
     $easyDoctrineConfig
         ->deferredDispatcherEntities([
-            stdClass::class,
+            Article::class,
+            Comment::class,
         ]);
 };
